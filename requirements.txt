@@ -1,0 +1,4 @@
+Flask
+validators
+yt-dlp
+gunicorn
