@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Downloader</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #000000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #eaeaea;
+        }
+        .wrapper {
+            position: relative;
+            top: 40px; /* Adjust this value to move the container down */
+        }
+        .container {
+            text-align: center;
+            background: #1c1c1c;
+            padding: 30px;
+            width: 350px;
+            height: auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+            border: 1px solid #4a1c1c;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #ff4d4d;
+        }
+        input[type="text"], textarea {
+            width: 85%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #4a1c1c;
+            border-radius: 4px;
+            background: #000000;
+            color: #eaeaea;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #e63946;
+            border: none;
+            color: #ffffff;
+            font-weight: bold;
+            border-radius: 2000px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #b71c1c;
+        }
+        .messages ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0 0;
+        }
+        .messages li {
+            background: #4a1c1c;
+            color: #eaeaea;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .multiline-text {
+            margin: 20px 0;
+            text-align: left;
+            color: #cccccc;
+        }
+        .image-container {
+            margin: 10px 0;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            color: #ff4d4d;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1>Video Downloader</h1>
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='r1.png') }}" alt="r" width="150">
+            </div>
+            <form action="{{ url_for('download') }}" method="post">
+                <input type="text" name="url" placeholder="Enter YouTube URL" required>
+                <button type="submit">Download</button>
+            </form>
+            <div class="multiline-text">
+                <p>
+                    <ul>
+                        <li><b>FEATURES</b></li>
+                        <li>Life long free and unlimited conversions and downloads</li>
+                        <li>Best YouTube to MP4 Converter with high quality</li>
+                        <li>Support video search by keywords and YouTube playlist</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="messages">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul>
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
