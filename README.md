@@ -1,5 +1,5 @@
+![YouTube Downloader Logo]("C:\Users\Chaya\Downloads\youtube.jpg")
 
-![YouTube Downloader Logo]("C:\Users\Chaya\Downloads\youtube-logo.webp")
 
 
 🚀 Features
