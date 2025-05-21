@@ -1,6 +1,6 @@
 
+![YouTube Downloader Logo]("C:\Users\Chaya\Downloads\youtube-logo.webp")
 
-https://variety.com/wp-content/uploads/2020/06/youtube-logo.png
 
 🚀 Features
 Download videos in multiple resolutions (1080p, 720p, 480p, etc.)
